@@ -9,7 +9,7 @@ for F in $FILES ; do
 bwa mem ../Trinity.fasta ${F}.fastq.gz > ${F}.sam
 
 #Transform Sam to Bam File
-samtools view ${F}.sam ${F}.bam
+samtools view ${F}.sam -o ${F}.bam
 
 #Generate Statistics for the alignment and save those as a txt file
 samtools flagstat ${F}.bam > ${F}.txt
